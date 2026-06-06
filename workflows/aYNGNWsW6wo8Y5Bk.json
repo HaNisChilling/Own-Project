@@ -1,0 +1,43 @@
+{
+  "active": false,
+  "activeVersion": null,
+  "activeVersionId": null,
+  "connections": {},
+  "createdAt": "2026-06-06T09:25:39.418Z",
+  "id": "aYNGNWsW6wo8Y5Bk",
+  "isArchived": false,
+  "meta": null,
+  "name": "good-kk",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fe1ad2b8-8f73-4425-90f5-419526942877",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "shared": [
+    {
+      "updatedAt": "2026-06-06T09:25:39.446Z",
+      "createdAt": "2026-06-06T09:25:39.446Z",
+      "role": "workflow:owner",
+      "workflowId": "aYNGNWsW6wo8Y5Bk",
+      "projectId": "ggXFosSSFZXqgWwL"
+    }
+  ],
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2026-06-06T09:25:47.729Z",
+  "versionId": "0befacae-f563-42ef-91cf-dce465b22a1a"
+}
