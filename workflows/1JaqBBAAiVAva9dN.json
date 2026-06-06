@@ -5,7 +5,7 @@
   "connections": {},
   "createdAt": "2026-06-06T09:47:43.055Z",
   "id": "1JaqBBAAiVAva9dN",
-  "isArchived": false,
+  "isArchived": true,
   "meta": null,
   "name": "My workflow -kk",
   "nodes": [
@@ -38,6 +38,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2026-06-06T09:47:52.889Z",
-  "versionId": "c72e3317-6bcf-432b-8dd8-d531cf177f09"
+  "updatedAt": "2026-06-06T09:48:50.000Z",
+  "versionId": "bbcf82d7-6108-4080-815e-270daa694f6a"
 }
