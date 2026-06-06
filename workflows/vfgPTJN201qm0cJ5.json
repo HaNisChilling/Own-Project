@@ -98,6 +98,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "File is Delete",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -238,12 +245,36 @@
           }
         ]
       ]
+    },
+    "File is Delete": {
+      "main": [
+        [
+          {
+            "node": "Edit existing file1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit existing file1": {
+      "main": [
+        [
+          {
+            "node": "Return",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "createdAt": "2026-06-06T09:16:49.073Z",
   "id": "vfgPTJN201qm0cJ5",
   "isArchived": false,
-  "meta": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
   "name": "ourflow -kk",
   "nodes": [
     {
@@ -414,6 +445,10 @@
             {
               "value2": "new",
               "output": 2
+            },
+            {
+              "value2": "Delete",
+              "output": 3
             }
           ]
         }
@@ -774,6 +809,51 @@
       ],
       "id": "87f82084-bf46-4bf5-96c3-f68aba4e6cb0",
       "name": "Filter"
+    },
+    {
+      "parameters": {},
+      "id": "d7f5d4d9-9f01-4569-a096-a6b933d9fa9b",
+      "name": "File is Delete",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        1232,
+        800
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Globals').item.json.repo.owner }}"
+        },
+        "repository": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Globals').item.json.repo.name }}"
+        },
+        "filePath": "={{ $('Globals').item.json.repo.path }}{{$('Execute Workflow Trigger').first().json.id}}.json",
+        "fileContent": "={{$('isDiffOrNew').item.json[\"n8n_data_stringy\"]}}",
+        "commitMessage": "={{$('Execute Workflow Trigger').first().json.name}} ({{$json.github_status}})"
+      },
+      "id": "4a792462-3354-4305-a2cf-187ea926e245",
+      "name": "Edit existing file1",
+      "type": "n8n-nodes-base.github",
+      "position": [
+        1440,
+        800
+      ],
+      "webhookId": "a57e71de-4960-4d25-a59f-1a9e2e96aff5",
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "W19b4zBmvEQL9jzr",
+          "name": "GitHub account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -793,6 +873,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2026-06-06T09:26:45.963Z",
-  "versionId": "156310df-dabb-41df-b565-050e232807c8"
+  "updatedAt": "2026-06-06T10:03:07.167Z",
+  "versionId": "60f818f5-3532-4c05-be32-b68a748780f4"
 }
